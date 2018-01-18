@@ -36,5 +36,17 @@ class DashboardController extends Controller
         $register_user_info  = DB::table('users')->where('id',"=",$id)->get();
         return View('admin.dashboard.user-profile')->with('user_info', $register_user_info);
     } 
+
+    public function userDelete($id)
+    {  
+        DB::table('users')->where('id',"=",$id)->delete();;
+        return redirect('/admin-dashboard');
+    } 
+
+    public function updateUserProfile(Request $request)
+    {  
+        DB::table('users')->where('id',$request->id)->update(['name'=>$request->name, 'email'=>$request->email,'password'=>$request->password,'contact_no'=>$request->contact_no]);
+        return redirect('/user-profile/'.$request->id);
+    }
 }    
    

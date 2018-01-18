@@ -26,6 +26,7 @@
     }
     .dash_user_font{
         font-size: 15px !important;
+        margin-bottom: -20px;
     }
     .dash-unit hr {
         border: 0;
@@ -35,21 +36,29 @@
     }
     .dash-block{
         background-color: black;
-        width: 150px;
-        height: 200px;
+        width: 220px;
+        height: 270px;
         text-align: center;
         border-radius: 14px;
         margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .dash-button{
+        width: 80px;
     }
     .dash-image{
-        width: 120px;
+        width: 190px;
         height: 80px;
     }
     .input-huge{
+        height: 35px;
         width: 445px;
     }
     .margin-left-5{
         margin-left: 5px; 
+    }
+    .color-white{
+        color: white;
     }
 </style>
 <body>

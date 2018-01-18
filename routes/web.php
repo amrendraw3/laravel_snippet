@@ -28,7 +28,10 @@ Route::group(['middleware'=>'auth'], function(){
 	})->name('home');
 
 	Route::get('/admin-dashboard', 'Admin\DashboardController@showDashboard')->name('admin-dashboard');
-	Route::any('/user-profile/{id}', 'Admin\DashboardController@userProfile');	
+	Route::any('/user-profile/{id}', 'Admin\DashboardController@userProfile');
+	Route::any('/user-delete/{id}', 'Admin\DashboardController@userDelete');
+	Route::post('/update-user-profile', 'Admin\DashboardController@updateUserProfile');	
+	
 });
 
 Auth::routes();
