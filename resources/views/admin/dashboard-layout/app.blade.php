@@ -8,11 +8,50 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>User Profile</title>
+    <title>Admin Dashboard</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style type="text/css">
+    .dash_height{
+        height: 220px !important;
+    }
+    .dash_img{
+        width: 70px !important; 
+        border: 1px solid rgba(255,255,255,.15);
+    }
+    .dash_font{
+        font-size: 14px !important;
+    }
+    .dash_user_font{
+        font-size: 15px !important;
+    }
+    .dash-unit hr {
+        border: 0;
+        border-top: 1px solid rgba(255,255,255,.15);
+        border-top-style: dashed;
+        margin-top: 5px;
+    }
+    .dash-block{
+        background-color: black;
+        width: 150px;
+        height: 200px;
+        text-align: center;
+        border-radius: 14px;
+        margin-right: 20px;
+    }
+    .dash-image{
+        width: 120px;
+        height: 80px;
+    }
+    .input-huge{
+        width: 445px;
+    }
+    .margin-left-5{
+        margin-left: 5px; 
+    }
+</style>
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -29,7 +68,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        User Profile
+                        Admin Dashboard
                     </a>
                 </div>
 
@@ -76,7 +115,7 @@
 
         @yield('content')
     </div>
-
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

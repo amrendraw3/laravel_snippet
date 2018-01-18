@@ -15,18 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//for call custom login controller
+Route::post('/login/custom', [
+'uses' => 'LoginController@login',
+'as' => 'login.custom'
+]);
+
+//multiple auth login
+Route::group(['middleware'=>'auth'], function(){
+	Route::get('/home',function(){
+		return view('home');
+	})->name('home');
+
+	Route::get('/admin-dashboard', 'Admin\DashboardController@showDashboard')->name('admin-dashboard');
+	Route::any('/user-profile/{id}', 'Admin\DashboardController@userProfile');	
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/edit-profile', 'HomeController@edit');
