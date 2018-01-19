@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "/css/main.css"/>
+
 </head>
 <body>
     <div id="app">
@@ -62,7 +64,7 @@
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" class="logout-form" action="{{ route('logout') }}" method="POST">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

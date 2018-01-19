@@ -1,4 +1,3 @@
-
 @extends('admin.dashboard-layout.app')
 
 @section('content')
@@ -15,7 +14,7 @@
                 </dtitle>
                 <hr>                        
                     <div class="dash-image" align="center" >
-                        <img class="img-circle dash_img" src="{{asset('default-user.jpeg')}}" style="width: 100px" >
+                        <img class="img-circle dash_img img-width" src="{{asset('admin/images/default-user.jpeg')}}">
                         </img>     
                     </div>                       
                    <h1 class="dash_user_font color-white">
@@ -30,7 +29,7 @@
                 </hr>
             </div>
             <a href="/user-profile/{{ $user->id }}">
-                <button type="button" class="btn btn-success dash-button" style="margin-right: 10px;">Edit</button>
+                <button type="button" class="btn btn-success dash-button mar-right-10">Edit</button>
             </a>
             <a href="/user-delete/{{ $user->id }}" >
                 <button type="button" class="btn btn-success dash-button">Delete</button>

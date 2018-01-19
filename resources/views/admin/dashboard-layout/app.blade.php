@@ -12,55 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "/admin/css/main.css"/>
+
 </head>
-<style type="text/css">
-    .dash_height{
-        height: 220px !important;
-    }
-    .dash_img{
-        width: 70px !important; 
-        border: 1px solid rgba(255,255,255,.15);
-    }
-    .dash_font{
-        font-size: 14px !important;
-    }
-    .dash_user_font{
-        font-size: 15px !important;
-        margin-bottom: -20px;
-    }
-    .dash-unit hr {
-        border: 0;
-        border-top: 1px solid rgba(255,255,255,.15);
-        border-top-style: dashed;
-        margin-top: 5px;
-    }
-    .dash-block{
-        background-color: black;
-        width: 220px;
-        height: 270px;
-        text-align: center;
-        border-radius: 14px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
-    .dash-button{
-        width: 80px;
-    }
-    .dash-image{
-        width: 190px;
-        height: 80px;
-    }
-    .input-huge{
-        height: 35px;
-        width: 445px;
-    }
-    .margin-left-5{
-        margin-left: 5px; 
-    }
-    .color-white{
-        color: white;
-    }
-</style>
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -110,7 +64,7 @@
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" class="logout-form" action="{{ route('logout') }}" method="POST">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
