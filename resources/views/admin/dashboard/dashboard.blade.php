@@ -6,6 +6,9 @@
         <!--row -->
     <div class="row">
         <!-- user block -->
+        @if(Session::has('delete_success'))
+            <div class='alert alert-success' role="alert" id="confirm"><span>{{session()->get('delete_success')}}</span></div>
+         @endif 
         @foreach($users as $user)
         <div class="col-sm-2 col-lg-2 dash-block" >
             <div class="dash-unit dash_height">
@@ -40,6 +43,16 @@
     </div>
     <!--/row -->
 </div>
-<!-- /container -->     
+<!-- /container -->
+<!-- scripts -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+<script>    
+    $("#confirm").ready(function() {
+        setTimeout(function() {
+            $('#confirm').fadeOut("slow");
+        }, 2000 );        
+    });
+</script> 
+<!-- /scripts -->    
 @endsection
 

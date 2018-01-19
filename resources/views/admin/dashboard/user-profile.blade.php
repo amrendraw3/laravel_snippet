@@ -6,6 +6,9 @@
         <!--row -->
     <div class="row">
         <!-- user block -->
+        @if(Session::has('update_success'))
+            <div class='alert alert-success' role="alert" id="confirm"><span>{{session()->get('update_success')}}</span></div>
+         @endif 
         @foreach($user_info as $user)
         <div class="col-sm-6 col-lg-6">
           <div id="register-wraper" style="margin-top: 0px;">
@@ -38,6 +41,16 @@
     </div>
     <!--/row -->
 </div>
-<!-- /container -->     
+<!-- /container --> 
+<!-- scripts -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+<script>    
+    $("#confirm").ready(function() {
+        setTimeout(function() {
+            $('#confirm').fadeOut("slow");
+        }, 2000 );        
+    });
+</script> 
+<!-- /scripts -->     
 @endsection
 

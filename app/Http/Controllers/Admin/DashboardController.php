@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use DB;
 use App\file;
 use Illuminate\Support\Facades\Storage;
+use Session;
 
 class DashboardController extends Controller
 {
@@ -39,13 +40,15 @@ class DashboardController extends Controller
 
     public function userDelete($id)
     {  
-        DB::table('users')->where('id',"=",$id)->delete();;
+        DB::table('users')->where('id',"=",$id)->delete();
+        Session::flash('delete_success','User Data Are Deleted Successfully.');
         return redirect('/admin-dashboard');
     } 
 
     public function updateUserProfile(Request $request)
     {  
         DB::table('users')->where('id',$request->id)->update(['name'=>$request->name, 'email'=>$request->email,'password'=>$request->password,'contact_no'=>$request->contact_no]);
+        Session::flash('update_success','User Data Are Updated Successfully.');
         return redirect('/user-profile/'.$request->id);
     }
 }    
